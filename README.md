@@ -3,7 +3,7 @@
 ## Introduction
 High-performance computin을 위한 다양한 Benchmark 및 프로그램 
 
-## Algorithms
+## Contents
 
 ### C
 
