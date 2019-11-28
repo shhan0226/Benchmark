@@ -1,0 +1,83 @@
+
+
+public class Benchmark_SAXPY {
+
+	int N = 1 << 26;
+	float XVAL = (float) (10 * Math.random());
+	float YVAL = (float) (10 * Math.random());
+	float AVAL = (float) (10 * Math.random());
+	float[] x;
+	float[] y;
+	double Result = 0.0;
+
+	public double getResult() {
+		return Result;
+	}
+
+	public Benchmark_SAXPY() {
+		init();
+		for (int i = 0; i < 10; i++) {
+			Result += check();
+		}
+		System.out.println("Average Elapsed: " + Result / 10 + " ms");
+		Result = Result / 10;
+	}
+
+	public Benchmark_SAXPY(int loop) {
+		init();
+		for (int i = 0; i < loop; i++) {
+			Result += check();
+		}
+		System.out.println("Average Elapsed: " + Result / loop + " ms");
+		Result = Result / loop;
+	}
+
+	public Benchmark_SAXPY(int N, int loop) {
+		init(N);
+		for (int i = 0; i < loop; i++) {
+			Result += check();
+		}
+		System.out.println("sum Elapsed: " + Result + " ms");
+		System.out.println("Average Elapsed: " + Result / loop + " ms");
+		Result = Result / loop;
+	}
+
+	public void init() {
+		System.out.println("N: " + N);
+		x = new float[N];
+		y = new float[N];
+
+	}
+
+	private void init(int N) {
+		this.N = N;
+		System.out.println("N: " + N);
+		x = new float[N];		
+		y = new float[N];
+
+	}
+
+	public double check() {
+
+		for (int i = 0; i < N; i++) {
+			x[i] = XVAL;
+			y[i] = YVAL;
+		}
+
+		double startTime = System.nanoTime();
+		for (int i = 0; i < N; i++) {
+			y[i] += AVAL * x[i];
+		}
+		double endTime = System.nanoTime();
+		System.out.println("Elapsed: " + (endTime - startTime) / 1000000.0 + " ms");
+
+		/*
+		float error = 0;
+		for (int i = 0; i < N; i++) {
+			error += Math.abs(y[i] - (YVAL + AVAL * XVAL));
+		}
+		System.out.println("Error: " + error);
+		*/
+		return (endTime - startTime) / 1000000.0;
+	}
+}
