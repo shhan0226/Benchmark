@@ -1,7 +1,8 @@
 # Benchmark
+컴퓨팅 리소스 및 가상 머신의 성능을 측정하기 위한 저장소입니다.
 
 ## Introduction
-High-performance computin을 위한 다양한 Benchmark 및 프로그램 예제
+High-performance computing을 위한 다양한 Benchmark 및 프로그램 예제
 
 <br>
 
