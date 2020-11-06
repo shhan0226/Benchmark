@@ -1,5 +1,6 @@
 # Benchmark
 컴퓨팅 리소스 및 가상 머신의 성능을 측정하기 위한 저장소입니다.
+가상 머신의 성능 측정관련 프로젝트 내용은 [Wiki](https://github.com/shhan0226/Project-Benchmark/wiki)에 작성됩니다.
 
 ## Introduction
 High-performance computing을 위한 다양한 Benchmark 및 프로그램 예제
